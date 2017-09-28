@@ -1,0 +1,3 @@
+minimal_page:
+    resource: '@MinimalPageBundle/Controller'
+    type: annotation

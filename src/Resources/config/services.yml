@@ -1,0 +1,4 @@
+services:
+  minimal_manager.module.page:
+      class: MinimalOriginal\PageBundle\MinimalModule
+      tags: [minimal_manager.module]
