@@ -1,7 +1,5 @@
-{% extends "base.html.twig" %}
+{% extends "MinimalCoreBundle::base.html.twig" %}
 {% block data %}
-  <div class="columns">
-    <h1>{{data.title}}</h1>
-    <div>{{data.content|raw}}</div>
-  </div>
+  <h1>{{data.title}}</h1>
+  <div>{{data.content|raw}}</div>
 {% endblock %}
