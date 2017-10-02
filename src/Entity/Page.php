@@ -5,6 +5,7 @@ namespace MinimalOriginal\PageBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 use MinimalOriginal\CoreBundle\Entity\EntityRoutedInterface;
+use MinimalOriginal\CoreBundle\Annotation\Exposure;
 
 /**
  * Page
@@ -27,6 +28,7 @@ class Page implements EntityRoutedInterface
     /**
      * @var string
      *
+     * @Exposure(groups = {"manager"}, name = "Titre")
      * @ORM\Column(name="title", type="string", length=255)
      */
     private $title;
@@ -58,6 +60,7 @@ class Page implements EntityRoutedInterface
      * @var \DateTime $updated
      *
      * @Gedmo\Timestampable(on="update")
+     * @Exposure(groups = {"manager"}, name = "Date de miseà jour")
      * @ORM\Column(type="datetime")
      */
     private $updated;

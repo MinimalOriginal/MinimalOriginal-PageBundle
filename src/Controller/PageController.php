@@ -11,7 +11,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 class PageController extends Controller
 {
     /**
-     * @Route("/{slug}", name="page_show")
+     * @Route("/{slug}", name="minimal_page_show")
      */
     public function showAction($slug)
     {
