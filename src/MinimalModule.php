@@ -50,27 +50,13 @@ class MinimalModule implements ModuleInterface, ModuleRoutedInterface{
    * {@inheritdoc}
    */
   public function getShowRoute(){
-    return 'page_show';
+    return 'minimal_page_show';
   }
 
   /**
    * {@inheritdoc}
    */
   public function getShowRouteParams(EntityRoutedInterface $entity){
-    return array('slug' => $entity->getSlug());
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public function getShowController(){
-    return 'MinimalPageBundle:Page:show';
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public function getShowControllerParams(EntityRoutedInterface $entity){
     return array('slug' => $entity->getSlug());
   }
 

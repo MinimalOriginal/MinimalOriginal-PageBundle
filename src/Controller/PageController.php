@@ -3,7 +3,7 @@
 namespace MinimalOriginal\PageBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use MinimalOriginal\CoreBundle\Routing\Annotation\Route;
 
 /**
  * @Route("/page")
