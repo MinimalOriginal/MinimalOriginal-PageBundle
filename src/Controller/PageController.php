@@ -15,11 +15,18 @@ class PageController extends Controller
      */
     public function showAction($slug)
     {
+
       $repository = $this->getDoctrine()->getRepository('MinimalOriginal\PageBundle\Entity\Page');
       $data = $repository->findOneBy(array('slug'=>$slug));
       if( null === $data ){
         throw new NotFoundHttpException("cette page n'existe pas.");
       }
+
+      // Définit les données SEO
+      $seo = $this->container->get('minimal_seo');
+      $seo->addTitle($data->getTitle())
+      ->setDescription($data->getContent());
+
       return $this->render('MinimalPageBundle:Show:show.html.twig', array(
         'data' => $data,
       ));
