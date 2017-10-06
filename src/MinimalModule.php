@@ -2,33 +2,22 @@
 
 namespace MinimalOriginal\PageBundle;
 
-use MinimalOriginal\CoreBundle\Modules\AbstractModule;
+use MinimalOriginal\CoreBundle\Modules\AbstractManageableModule;
 
 use MinimalOriginal\PageBundle\Form\PageType;
 use MinimalOriginal\PageBundle\Entity\Page;
-use MinimalOriginal\CoreBundle\Entity\EntityRoutedInterface;
 
-class MinimalModule extends AbstractModule{
-
-  /**
-   * {@inheritdoc}
-   */
-  public function getName(){
-    return 'page';
-  }
+class MinimalModule extends AbstractManageableModule{
 
   /**
    * {@inheritdoc}
    */
-  public function getTitle(){
-    return "Pages";
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public function getDescription(){
-    return "Créez ou modifiez les pages de votre site.";
+  public function init(){
+    $this->informations->set('name', 'page');
+    $this->informations->set('title', 'Pages');
+    $this->informations->set('description', "Créez ou modifiez les pages de votre site.");
+    $this->informations->set('icon', "ion-ios-book-outline");
+    return $this;
   }
 
   /**
