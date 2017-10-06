@@ -4,6 +4,8 @@ namespace MinimalOriginal\PageBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
+use Symfony\Component\HttpFoundation\ParameterBag;
+
 use MinimalOriginal\CoreBundle\Entity\EntityRoutedInterface;
 use MinimalOriginal\CoreBundle\Annotation\Exposure;
 
@@ -244,9 +246,9 @@ class Page implements EntityRoutedInterface
      * {@inheritdoc}
      */
      public function getShowRoute(){
-       return array(
-         'route' => 'minimal_page_show',
-         'params' => array('slug' => $this->getSlug()),
-       );
+       $params = new ParameterBag();
+       $params->set('route', 'minimal_page_show');
+       $params->set('params', array('slug' => $this->getSlug()));
+       return $params;
      }
 }
