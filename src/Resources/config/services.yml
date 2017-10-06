@@ -1,4 +1,5 @@
 services:
   minimal_manager.module.page:
       class: MinimalOriginal\PageBundle\MinimalModule
+      arguments: ['@doctrine.orm.entity_manager']
       tags: [minimal_manager.module]

@@ -2,14 +2,13 @@
 
 namespace MinimalOriginal\PageBundle;
 
-use MinimalOriginal\CoreBundle\Modules\ModuleInterface;
-use MinimalOriginal\CoreBundle\Modules\ModuleRoutedInterface;
+use MinimalOriginal\CoreBundle\Modules\AbstractModule;
 
 use MinimalOriginal\PageBundle\Form\PageType;
 use MinimalOriginal\PageBundle\Entity\Page;
 use MinimalOriginal\CoreBundle\Entity\EntityRoutedInterface;
 
-class MinimalModule implements ModuleInterface, ModuleRoutedInterface{
+class MinimalModule extends AbstractModule{
 
   /**
    * {@inheritdoc}
@@ -44,20 +43,6 @@ class MinimalModule implements ModuleInterface, ModuleRoutedInterface{
    */
   public function getFormTypeClass(){
     return PageType::class;
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public function getShowRoute(){
-    return 'minimal_page_show';
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public function getShowRouteParams(EntityRoutedInterface $entity){
-    return array('slug' => $entity->getSlug());
   }
 
 }

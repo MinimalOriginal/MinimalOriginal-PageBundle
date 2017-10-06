@@ -239,4 +239,14 @@ class Page implements EntityRoutedInterface
     {
         return $this->parent;
     }
+
+    /**
+     * {@inheritdoc}
+     */
+     public function getShowRoute(){
+       return array(
+         'route' => 'minimal_page_show',
+         'params' => array('slug' => $this->getSlug()),
+       );
+     }
 }
